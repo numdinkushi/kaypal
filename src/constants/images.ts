@@ -1,0 +1,1 @@
+export const AppLogo = "/svg/opal-logo.svg"
