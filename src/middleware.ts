@@ -4,14 +4,13 @@ const isProtectedRoute = createRouteMatcher([
   "/dashboard/(.*)",
   "/api/payment/(.*)",
   "/payment/(.*)",
-  "!/auth/sign-in(.*)"  // Exclude sign-in route and its children
 ]);
+
 
 export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) {
-   
-    // @ts-expect-error // TODO: check this
-    auth().protect(); 
+
+    // auth().protect(); 
   }
 });
 
