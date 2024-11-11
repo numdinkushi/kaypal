@@ -1,10 +1,12 @@
 import { onAuthenticateUser } from '@/actions/user';
 import { redirect } from 'next/navigation';
 
-const DashboardPage = async () => {
+const AuthCallbackPage = async () => {
   const auth = await onAuthenticateUser();
 
-  if (auth.status === 200 || auth.status == 201){
+  console.log(2324, auth);
+
+  if (auth.status === 200 || auth.status == 201) {
     return redirect(`/dashboard/${auth.user?.workspace[0].id}`)
   }
 
@@ -12,11 +14,6 @@ const DashboardPage = async () => {
     return redirect(`/auth/sign-in`)
   }
 
-  return (
-    <div className="">
-      Dashboard Page
-    </div>
-  );
 };
 
-export default DashboardPage;
+export default AuthCallbackPage;
