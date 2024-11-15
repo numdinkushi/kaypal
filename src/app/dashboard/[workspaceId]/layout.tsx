@@ -49,14 +49,6 @@ const WorkspaceLayout = async ({ params: { workspaceId }, children }: Props) => 
     });
 
     return (
-        // <QueryClientProvider client={query}>
-        //     <HydrationBoundary state={dehydrate(query)}>
-        //         <div className="">
-        //             {/* Your layout components here */}
-        //         </div>
-        //         {children}
-        //     </HydrationBoundary>
-        // </QueryClientProvider>
         <HydrationBoundary state={dehydrate(query)}>
             <div className="flex h-screen w-screen">
                 <Sidebar activeWorkspaceId={workspaceId} />
